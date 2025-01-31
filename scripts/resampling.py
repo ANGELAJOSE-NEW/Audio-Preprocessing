@@ -4,7 +4,7 @@ import soundfile as sf
 
 def resample_audio(input_path, output_path, target_sr=16000):
     audio, sr = librosa.load(input_path, sr=None)
-    # print(sr)
+ 
     resampled_audio = librosa.resample(audio, orig_sr=sr, target_sr=target_sr)
     # librosa.output.write_wav(output_path, resampled_audio, sr=target_sr)
     sf.write(output_path, resampled_audio, target_sr)
